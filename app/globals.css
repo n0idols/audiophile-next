@@ -29,5 +29,5 @@ select {
 }
 
 .btn {
-  @apply border  text-black border-gray-700 py-5 px-12 font-medium hover:bg-gray-700 hover:text-white;
+  @apply border  text-black py-4 px-8 font-medium hover:bg-primaryHover hover:text-white;
 }

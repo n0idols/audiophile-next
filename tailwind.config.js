@@ -10,16 +10,22 @@ module.exports = {
   ],
   theme: {
     extend: {
-      // fontFamily: {
-      //   spaceg: ["var(--font-spaceg"],
-      //   sans: ["var(--font-spaceg)"],
-      // },
+      fontFamily: {
+        sans: ["var(--font-man)"],
+      },
       backgroundImage: {
         "hero-pattern": "url('/img/hero.jpg')",
       },
       colors: {
-        primary: "#4EE1A0",
+        primary: "#D87D4A",
+        primaryHover: "#fbaf85",
+        seconday: {
+          one: "#101010",
+          two: "#F1F1F1",
+          three: "#FAFAFA",
+        },
         grey: "#d9d9d9",
+
         // black: {
         //   800: "#151515",
         //   900: "#242424",

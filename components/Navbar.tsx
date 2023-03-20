@@ -1,29 +1,51 @@
 "use client";
+
 import { useState } from "react";
+import { usePathname } from "next/navigation";
+
+export const navLinks = [
+  {
+    title: "home",
+    href: "/",
+  },
+  {
+    title: "headphones",
+    href: "/categories/headphones",
+  },
+  {
+    title: "speakers",
+    href: "/categories/speakers",
+  },
+  {
+    title: "earphones",
+    href: "/categories/earphones",
+  },
+];
 
 export default function Navbar() {
   const [isMob, setMob] = useState(false);
+  const pathname = usePathname();
 
   return (
-    <nav className="bg-gray-200 s">
+    <nav className={pathname === "/" ? `bg-transparent` : `bg-black`}>
       <div className="container py-4">
         <div className="flex justify-between">
           {/* LOGO */}
           <div>
-            <a href="/" className="text-3xl font-bold italic">
-              Autofy
+            <a href="/" className="text-2xl font-extrabold  ">
+              audiophile
             </a>
           </div>
           {/* Primary Nav */}
-          <div className="hidden items-center justify-center space-x-6 text-sm font-light md:flex">
-            <a href="/services">Services</a>
-            <a href="/appointments">Appointments</a>
-            <a href="/about">How it Works</a>
+          <div className="hidden items-center justify-center space-x-6 text-sm font-light md:flex uppercase">
+            {navLinks.map((link) => (
+              <a href={link.href}>{link.title}</a>
+            ))}
           </div>
 
           {/* secondary nav */}
           <div className=" hidden items-center space-x-4 text-sm font-light md:flex">
-            <a href="/account">Account</a>
+            <a href="/account">cart</a>
           </div>
 
           {/* mob button */}
