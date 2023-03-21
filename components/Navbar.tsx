@@ -38,8 +38,10 @@ export default function Navbar() {
           </div>
           {/* Primary Nav */}
           <div className="hidden items-center justify-center space-x-6 text-sm font-light md:flex uppercase">
-            {navLinks.map((link) => (
-              <a href={link.href}>{link.title}</a>
+            {navLinks.map((link, idx) => (
+              <a key={idx} href={link.href}>
+                {link.title}
+              </a>
             ))}
           </div>
 
