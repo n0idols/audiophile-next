@@ -3,7 +3,7 @@
 import useGetHeadphone from "@/hooks/useGetHeadphone";
 
 import SingleProduct from "@/components/SingeProduct";
-export default function page({ params }: any) {
+export default function Page({ params }: any) {
   const headphoneQuery = useGetHeadphone(params.id);
 
   return (
