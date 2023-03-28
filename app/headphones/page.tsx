@@ -1,5 +1,4 @@
 import PageHero from "@/components/PageHero";
-import { Product } from "@/prisma/types";
 
 export default async function page() {
   const res = await fetch(
@@ -14,7 +13,7 @@ export default async function page() {
       <PageHero title={data[0].name} />
 
       <section className="container">
-        {products.map((product: Product) => (
+        {products.map((product: any) => (
           <div key={product.id}>
             <h2>{product.name}</h2>
             <p>{product.desc}</p>
