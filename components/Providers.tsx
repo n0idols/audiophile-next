@@ -5,6 +5,8 @@ import { SessionProvider } from "next-auth/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "react-hot-toast";
+import { CartStateProvider } from "@/lib/Cart";
+import { CookiesProvider } from "react-cookie";
 
 const queryClient = new QueryClient();
 
@@ -16,9 +18,13 @@ export default function Providers({ children }: Props) {
   return (
     <SessionProvider>
       <QueryClientProvider client={queryClient}>
-        {children}
-        {/* <ReactQueryDevtools initialIsOpen={false} /> */}
-        <Toaster />
+        <CookiesProvider>
+          <CartStateProvider>
+            {children}
+            {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+            <Toaster />
+          </CartStateProvider>
+        </CookiesProvider>
       </QueryClientProvider>
     </SessionProvider>
   );

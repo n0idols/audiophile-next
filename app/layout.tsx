@@ -18,6 +18,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${man.variable}`}>
       <body>
+        <div id="drawer-root"></div>
+
         <Providers>
           <Navbar />
           <div className="min-h-screen">{children}</div>

@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+h1 {
+  @apply lg:text-5xl tracking-wide font-black;
+}
 form {
   @apply -mt-14 flex flex-col  p-4;
 }
@@ -18,7 +21,7 @@ select {
 }
 
 .container {
-  @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  @apply max-w-6xl h-full mx-auto px-4 sm:px-6 lg:px-8;
 }
 
 .hero-content {
@@ -28,6 +31,17 @@ select {
   @apply text-6xl font-thin;
 }
 
+.wider {
+  letter-spacing: 0.5rem;
+}
+.wide {
+  letter-spacing: 0.2rem;
+}
+
 .btn {
-  @apply border  text-black py-4 px-8 font-medium hover:bg-primaryHover hover:text-white;
+  @apply text-white uppercase  text-xs  tracking-widest font-black bg-primary px-8 py-4;
+}
+
+.qty-btn {
+  @apply bg-primary p-4 text-white;
 }

@@ -61,18 +61,10 @@ model Product {
   desc       String
   features   String
   price      Int
-  includes   Includes[]
   category   Category   @relation(fields: [categoryId], references: [id])
   categoryId String
 }
 
-model Includes {
-  id        String   @id @default(cuid())
-  qty       String
-  name      String
-  Product   Product? @relation(fields: [productId], references: [id])
-  productId String?
-}
 
 model Category {
   id      String    @id @default(cuid())

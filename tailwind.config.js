@@ -14,7 +14,7 @@ module.exports = {
         sans: ["var(--font-man)"],
       },
       backgroundImage: {
-        "hero-pattern": "url('/img/hero.jpg')",
+        hero: "url('/hero.jpg')",
       },
       colors: {
         primary: "#D87D4A",
