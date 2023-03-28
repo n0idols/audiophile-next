@@ -1,7 +1,7 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 
-export default function useGetHeadphone(headphoneId) {
+export default function useGetHeadphone(headphoneId: string) {
   return useQuery(
     ["headphone", headphoneId],
     () =>
