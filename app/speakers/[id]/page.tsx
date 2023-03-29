@@ -1,4 +1,4 @@
-import SingleProduct from "@/components/SingeProduct";
+import SingleProduct from "@/components/SingleProduct";
 
 import getProduct from "@/lib/getProduct";
 import { Params, Product } from "@/prisma/types";

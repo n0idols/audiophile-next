@@ -4,9 +4,8 @@ import { useCart } from "@/lib/Cart";
 import React, { useState } from "react";
 
 import { PlusIcon, MinusIcon } from "@heroicons/react/24/solid";
-import { Product } from "@/prisma/types";
 
-export default function SingleProduct({ product }: { product: Product }) {
+export default function SingleProduct({ product }: any) {
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
 
