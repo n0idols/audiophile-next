@@ -20,6 +20,7 @@ export default function SingleProduct({ product }: { product: Product }) {
   const icon = `h-4 w-4`;
   return (
     <form onSubmit={addItemToCart}>
+      <pre>{JSON.stringify(product, null, 2)}</pre>
       <div>
         <div className="grid grid-cols-2">
           <div className="col-span-1">
