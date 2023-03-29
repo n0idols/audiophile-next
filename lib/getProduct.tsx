@@ -1,6 +1,6 @@
 export default async function getProduct(id: string) {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_ROUTE}/api/products/${id}`
+    `https://audiophile-next-beta.vercel.app/api/products/${id}`
   );
 
   if (!res.ok) {
