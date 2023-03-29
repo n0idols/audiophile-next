@@ -6,7 +6,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "react-hot-toast";
 import { CartStateProvider } from "@/lib/Cart";
-import { CookiesProvider } from "react-cookie";
 
 const queryClient = new QueryClient();
 
@@ -18,13 +17,11 @@ export default function Providers({ children }: Props) {
   return (
     <SessionProvider>
       <QueryClientProvider client={queryClient}>
-        <CookiesProvider>
-          <CartStateProvider>
-            {children}
-            {/* <ReactQueryDevtools initialIsOpen={false} /> */}
-            <Toaster />
-          </CartStateProvider>
-        </CookiesProvider>
+        <CartStateProvider>
+          {children}
+          {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+          <Toaster />
+        </CartStateProvider>
       </QueryClientProvider>
     </SessionProvider>
   );
