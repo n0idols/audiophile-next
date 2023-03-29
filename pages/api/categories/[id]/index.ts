@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import prisma from "../../../prisma/client";
+import prisma from "../../../../prisma/client";
 
 export default async function handler(
   req: NextApiRequest,
@@ -9,7 +9,7 @@ export default async function handler(
     try {
       const data = await prisma.category.findMany({
         where: {
-          name: "headphones",
+          id: req?.query?.id?.toString(),
         },
         include: {
           Products: true,

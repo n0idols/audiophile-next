@@ -1,10 +1,8 @@
-export interface Service {
-  service: {
-    title: string;
-    desc: string;
-  };
+export interface Category {
+  id: string;
+  name: string;
+  Products: Product[];
 }
-
 export interface Product {
   id: string;
   name: string;
@@ -16,3 +14,9 @@ export interface Product {
   };
   categoryId?: string;
 }
+
+export type Params = {
+  params: {
+    id: string;
+  };
+};

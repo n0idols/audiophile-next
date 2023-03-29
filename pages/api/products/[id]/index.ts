@@ -7,12 +7,12 @@ export default async function handler(
 ) {
   if (req.method === "GET") {
     try {
-      const headphone = await prisma.product.findMany({
+      const product = await prisma.product.findMany({
         where: {
           id: req?.query?.id?.toString(),
         },
       });
-      return res.status(200).json(headphone);
+      return res.status(200).json(product);
     } catch (error) {
       return res.status(500).json(error);
     }
