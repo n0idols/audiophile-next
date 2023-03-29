@@ -1,22 +1,23 @@
-"use client";
-
-import useGetHeadphone from "@/hooks/useGetHeadphone";
-
 import SingleProduct from "@/components/SingeProduct";
-export default function Page({ params }: any) {
-  const headphoneQuery = useGetHeadphone(params.id);
+import useGetHeadphone from "@/hooks/useGetHeadphone";
+import getProduct from "@/lib/getProduct";
+import { Product } from "@/prisma/types";
 
+type Params = {
+  params: {
+    id: string;
+  };
+};
+
+export default async function Page({ params }: Params) {
+  const productData: Promise<Product> = getProduct(params.id);
+  const product = await Promise.all([productData]);
+
+  console.log(product);
   return (
     <section className="container">
-      {headphoneQuery.isLoading ? (
-        <div>Loading...</div>
-      ) : (
-        <div className="border my-8 p-8">
-          {headphoneQuery.data?.data.map((product: any) => (
-            <SingleProduct key={product.id} product={product} />
-          ))}
-        </div>
-      )}
+      <h1>{JSON.stringify(product)}</h1>
+      <h1>{JSON.stringify(typeof params.id)}</h1>
     </section>
   );
 }

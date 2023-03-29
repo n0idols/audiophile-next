@@ -6,12 +6,13 @@ export interface Service {
 }
 
 export interface Product {
-  id: number;
+  id: string;
   name: string;
   price: number;
   desc: string;
   image?: string;
   category?: {
-    name: string;
+    id: string;
   };
+  categoryId?: string;
 }
