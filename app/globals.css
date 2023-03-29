@@ -12,10 +12,6 @@ label {
   @apply mb-2 block text-xs font-medium text-gray-900;
 }
 
-input {
-  @apply mb-2 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500;
-}
-
 select {
   @apply mb-2 rounded-md bg-gray-100 p-2;
 }
@@ -43,5 +39,9 @@ select {
 }
 
 .qty-btn {
-  @apply bg-primary p-4 text-white;
+  @apply bg-gray-100 p-4 text-gray-600;
+}
+
+.qty-input {
+  @apply w-[3rem] bg-gray-100 text-center font-bold text-gray-900 focus:border-blue-500 focus:ring-blue-500;
 }
