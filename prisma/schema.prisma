@@ -63,9 +63,8 @@ model Product {
   price      Int
   category   Category  @relation(fields: [categoryId], references: [id])
   categoryId String
-  image      Image?     @relation(fields: [imageId], references: [id])
-  imageId    String?
-  gallery    Gallery[]
+  image      String?
+  gallery    String[]
 }
 
 model Category {
@@ -74,19 +73,3 @@ model Category {
   Products Product[]
 }
 
-model Image {
-  id        String    @id @default(cuid())
-  name      String
-  url       String
-  Product   Product[]
-  productId String?
-  Gallery   Gallery?  @relation(fields: [galleryId], references: [id])
-  galleryId String?
-}
-
-model Gallery {
-  id        String   @id @default(cuid())
-  images    Image[]
-  Product   Product? @relation(fields: [productId], references: [id])
-  productId String?
-}

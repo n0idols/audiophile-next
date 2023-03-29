@@ -24,7 +24,7 @@ export default function SingleProduct({ product }: any) {
           <div className="col-span-1">
             {product.image && (
               <Image
-                src={product.image.url}
+                src={product.image}
                 alt={product.name}
                 width={500}
                 height={500}
