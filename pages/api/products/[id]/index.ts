@@ -11,10 +11,6 @@ export default async function handler(
         where: {
           id: req?.query?.id?.toString(),
         },
-        include: {
-          image: true,
-          gallery: true,
-        },
       });
       return res.status(200).json(product);
     } catch (error) {
