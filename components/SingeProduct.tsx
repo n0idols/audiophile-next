@@ -5,9 +5,9 @@ import React, { useState } from "react";
 
 import { PlusIcon, MinusIcon } from "@heroicons/react/24/solid";
 import { Product } from "@/prisma/types";
-import Image from "next/image";
+
 export default function SingleProduct({ product }: { product: Product }) {
-  const { addToCart, cartOpen } = useCart();
+  const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
 
   function addItemToCart(e: React.SyntheticEvent) {
@@ -24,14 +24,15 @@ export default function SingleProduct({ product }: { product: Product }) {
       <div>
         <div className="grid grid-cols-2">
           <div className="col-span-1">
-            {product.image && (
+            nice image
+            {/* {product.image && (
               <Image
                 src={product.image.url}
                 alt={product.name}
                 width={500}
                 height={500}
               />
-            )}
+            )} */}
           </div>
           <div className="col-span-1">
             <h1>{product.name}</h1>
