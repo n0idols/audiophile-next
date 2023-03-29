@@ -7,9 +7,8 @@ export default async function Page({ params }: Params) {
   const productData: Promise<Product> = getProduct(params.id);
   const product = await Promise.all([productData]);
   return (
-    <section className="container">
-      <pre>{JSON.stringify(product, null, 2)}</pre>
-      {/* <SingleProduct product={product} /> */}
+    <section className="container mt-20">
+      <SingleProduct product={product.flat()[0]} />
     </section>
   );
 }

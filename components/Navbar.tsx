@@ -46,7 +46,7 @@ export default function Navbar() {
               </a>
             </div>
             {/* Primary Nav */}
-            <div className="hidden items-center justify-center space-x-6 text-sm font-light md:flex uppercase wide">
+            <div className="hidden items-center justify-center space-x-8 text-sm font-light md:flex uppercase wide">
               {navLinks.map((link, idx) => (
                 <a
                   key={idx}
@@ -63,7 +63,7 @@ export default function Navbar() {
               <button onClick={toggleCart}>
                 <ShoppingCartIcon className="h-6 w-6" />
               </button>
-              {/* {cart.length ? cart.length : null} */}
+              {cart ? cart.length : null}
             </div>
 
             {/* mob button */}

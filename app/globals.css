@@ -6,7 +6,7 @@ h1 {
   @apply lg:text-5xl tracking-wide font-black;
 }
 form {
-  @apply -mt-14 flex flex-col  p-4;
+  @apply flex flex-col  p-4;
 }
 label {
   @apply mb-2 block text-xs font-medium text-gray-900;

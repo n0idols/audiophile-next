@@ -14,7 +14,7 @@ export default async function page() {
           <div key={product.id}>
             <h2>{product.name}</h2>
             <p>{product.desc}</p>
-            <a href={`/headphones/${product.id}`}>view product</a>
+            <a href={`/speakers/${product.id}`}>view product</a>
           </div>
         ))}
       </section>
