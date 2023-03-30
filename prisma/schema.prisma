@@ -64,13 +64,17 @@ model Product {
   category   Category  @relation(fields: [categoryId], references: [id])
   categoryId String
   image      String?
+  tabletimg    String?
+  mobileimg    String?
   gallery    String[]
 }
 
 model Category {
   id       String    @id @default(cuid())
   name     String
-  image    String?
+  desktopimg    String?
+  tabletimg    String?
+  mobileimg    String?
   Products Product[]
 }
 

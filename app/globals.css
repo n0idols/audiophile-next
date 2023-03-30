@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 h1 {
-  @apply lg:text-5xl tracking-wide font-black;
+  @apply lg:text-5xl text-5xl tracking-wide font-semibold;
 }
 form {
   @apply flex flex-col  p-4;
@@ -36,6 +36,12 @@ select {
 
 .btn {
   @apply text-white uppercase  text-xs  tracking-widest font-black bg-primary px-8 py-4;
+}
+.btn-black {
+  @apply text-white uppercase  text-xs  tracking-widest font-black bg-black px-8 py-4;
+}
+.btn-outline {
+  @apply text-black uppercase  text-xs  tracking-widest font-black  px-8 py-4 border border-black;
 }
 
 .qty-btn {

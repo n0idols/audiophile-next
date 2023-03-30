@@ -7,11 +7,11 @@ export default function CategoryList({
   categories: Category[];
 }) {
   return (
-    <div className="container">
-      <div className="grid grid-cols-3 gap-8">
+    <div className="container  my-24 ">
+      <div className="grid md:grid-cols-3 md:gap-8 ">
         {categories.map((category) => (
-          <div key={category.id} className="">
-            <div className="bg-gray-100 mt-32 flex flex-col justify-center items-center  ">
+          <div key={category.id} className="-mt-32">
+            <div className="bg-gray-100 mt-32 flex flex-col justify-center items-center h-1/2 py-12 rounded-md ">
               <Image
                 src={category.image}
                 alt={category.name}
