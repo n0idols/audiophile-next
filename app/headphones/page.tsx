@@ -1,4 +1,7 @@
 import PageHero from "@/components/PageHero";
+import ProductItem from "@/components/ProductItem";
+import { Product } from "@/prisma/types";
+import Image from "next/image";
 
 export default async function page() {
   const res = await fetch(
@@ -10,12 +13,8 @@ export default async function page() {
     <>
       <PageHero title={data[0].name} />
       <section className="container">
-        {products.map((product: any) => (
-          <div key={product.id}>
-            <h2>{product.name}</h2>
-            <p>{product.desc}</p>
-            <a href={`/headphones/${product.id}`}>view product</a>
-          </div>
+        {products.map((product: Product) => (
+          <ProductItem key={product.id} product={product} />
         ))}
       </section>
     </>

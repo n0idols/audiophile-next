@@ -63,7 +63,7 @@ export default function Navbar() {
               <button onClick={toggleCart}>
                 <ShoppingCartIcon className="h-6 w-6" />
               </button>
-              {cart ? cart.length : null}
+              {/* {cart ? cart.length : null} */}
             </div>
 
             {/* mob button */}

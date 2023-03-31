@@ -72,9 +72,7 @@ model Product {
 model Category {
   id       String    @id @default(cuid())
   name     String
-  desktopimg    String?
-  tabletimg    String?
-  mobileimg    String?
+  image    String?
   Products Product[]
 }
 

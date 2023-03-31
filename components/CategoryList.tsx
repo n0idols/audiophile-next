@@ -7,7 +7,7 @@ export default function CategoryList({
   categories: Category[];
 }) {
   return (
-    <div className="container  my-24 ">
+    <div className="container  mt-32 ">
       <div className="grid md:grid-cols-3 md:gap-8 ">
         {categories.map((category) => (
           <div key={category.id} className="-mt-32">
@@ -25,7 +25,7 @@ export default function CategoryList({
                 </h3>
 
                 <a
-                  href={`/categories/${category.id}`}
+                  href={`/${category.name}`}
                   className="text-xs text-gray-400 uppercase font-bold tracking-widest flex items-center"
                 >
                   shop <ChevronRightIcon className="h-4 w-4" />{" "}

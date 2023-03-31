@@ -1,4 +1,5 @@
 import PageHero from "@/components/PageHero";
+import ProductItem from "@/components/ProductItem";
 
 export default async function page() {
   const res = await fetch(
@@ -11,11 +12,7 @@ export default async function page() {
       <PageHero title={data[0].name} />
       <section className="container">
         {products.map((product: any) => (
-          <div key={product.id}>
-            <h2>{product.name}</h2>
-            <p>{product.desc}</p>
-            <a href={`/speakers/${product.id}`}>view product</a>
-          </div>
+          <ProductItem key={product.id} product={product} />
         ))}
       </section>
     </>

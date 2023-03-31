@@ -3,8 +3,8 @@ import Image from "next/image";
 export default function FeaturedProducts() {
   return (
     <section className="container">
-      <div className="bg-primary rounded-md px-12 pt-28">
-        <div className="bg-circles bg-cover">
+      <div className="bg-primary rounded-md px-12 pt-28 pb-12">
+        <div className="bg-circles bg-cover bg-center">
           <div className="grid lg:grid-cols-2 gap-12">
             <div className="flex justify-center px-12">
               <Image
@@ -14,8 +14,8 @@ export default function FeaturedProducts() {
                 alt="speaker"
               />
             </div>
-            <div className="px-12 md:text-center">
-              <div className="flex flex-col mt-8 h-full space-y-7">
+            <div className="lg:px-12 lg:text-left text-center">
+              <div className="flex flex-col mt-2 h-full lg:space-y-7 space-y-4">
                 <h1 className="uppercase text-white">
                   ZX9 <br />
                   Speaker
@@ -35,8 +35,8 @@ export default function FeaturedProducts() {
         </div>
       </div>
 
-      <div className="bg-zx7 bg-cover bg-right-bottom my-14">
-        <div className="grid md:grid-cols-2 gap-12 px-24">
+      <div className="bg-zx7 lg:bg-cover lg:bg-right-bottom  my-14">
+        <div className="grid md:grid-cols-2 gap-12 lg:px-24 px-8">
           <div className="flex justify-center flex-col h-[320px]">
             <div>
               <h3 className="uppercase wide font-semibold text-2xl pb-12">
@@ -53,11 +53,11 @@ export default function FeaturedProducts() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2 md:gap-8 gap-2">
         <div className="bg-yx1 h-[320px] bg-cover bg-center rounded-md"></div>
-        <div className="bg-gray-100 rounded-md flex justify-center flex-col pl-24">
+        <div className="bg-gray-100 rounded-md flex justify-center flex-col lg:pl-24 pl-4 p-8">
           <div>
-            <h3 className="uppercase wide font-semibold text-2xl pb-12">
+            <h3 className="uppercase wide font-semibold text-2xl md:pb-12 pb-8">
               yx1 earphones
             </h3>
           </div>

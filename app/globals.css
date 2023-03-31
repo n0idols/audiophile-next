@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 h1 {
-  @apply lg:text-5xl text-5xl tracking-wide font-semibold;
+  @apply lg:text-5xl text-4xl  tracking-wide font-semibold;
 }
 form {
   @apply flex flex-col  p-4;

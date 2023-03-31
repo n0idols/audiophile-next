@@ -21,6 +21,10 @@ module.exports = {
         zx7: "url('https://res.cloudinary.com/swdb/image/upload/v1679350325/audiophile/home/tablet/image-speaker-zx7_vwsdtj.jpg')",
         yx1: "url('https://res.cloudinary.com/swdb/image/upload/v1679350325/audiophile/home/tablet/image-earphones-yx1_labzch.jpg')",
         info: "url('https://res.cloudinary.com/swdb/image/upload/v1679350335/audiophile/shared/desktop/image-best-gear_dyb1hl.jpg')",
+        deskInfo:
+          "url('https://res.cloudinary.com/swdb/image/upload/v1679350335/audiophile/shared/desktop/image-best-gear_dyb1hl.jpg')",
+        mobInfo:
+          "url('https://res.cloudinary.com/swdb/image/upload/v1679350325/audiophile/shared/mobile/image-best-gear_b3nl3s.jpg')",
         deskHero:
           "url('https://res.cloudinary.com/swdb/image/upload/v1679350326/audiophile/home/desktop/image-hero_debazl.jpg')",
         tabHero:
