@@ -1,4 +1,4 @@
-"use client ";
+"use client";
 import { useCart } from "@/lib/Cart";
 
 export default function Page() {
