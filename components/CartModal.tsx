@@ -10,13 +10,14 @@ import ReactDOM from "react-dom";
 import CartItem from "./CartItem";
 import Overlay from "./Overlay";
 
-const container = ` fixed top-0 right-0 h-screen w-full md:w-5/12 xl:w-4/12 `;
-const drawerstyle = ` h-1/2 flex flex-col  px-8 md:px-4 mt-28`;
+const container = `max-w-6xl flex justify-end mx-auto px-4 w-full`;
+const themodal = `h-screen w-full sm:w-[600px] `;
+const drawerstyle = `h-auto flex flex-col  px-8 md:px-4 mt-28`;
 const drawerheader = ` bg-white flex justify-between items-center p-8 rounded-t-xl`;
-const drawerbody = `bg-white h-full px-4 overflow-y-auto `;
+const drawerbody = `bg-white h-full px-4 overflow-y-auto b`;
 const drawerfooter = `bg-white px-8 rounded-b-xl`;
-const checkoutbtnDesk = `hidden md:flex btn btn-primary  my-4 w-full py-2 justify-between justify-center text-center`;
-const checkoutbtn = `md:hidden btn btn-primary my-4 py-2 px-20 flex justify-between `;
+const checkoutbtnDesk = `hidden md:flex btn btn-primary  my-4 w-full py-2 justify-center justify-center text-center`;
+const checkoutbtn = `md:hidden btn btn-primary my-4 py-2 px-20 flex justify-center `;
 
 export default function CartModal({ show, onClose }: any) {
   const [isBrowser, setIsBrowser] = useState(false);
@@ -26,24 +27,9 @@ export default function CartModal({ show, onClose }: any) {
     setIsBrowser(true);
   }, []);
 
-  const handleClose = (e: { preventDefault: () => void }) => {
-    e.preventDefault();
-    onClose();
-  };
-
   const onMenuChange = () => {
     closeCart();
     // router.push("/menu");
-  };
-
-  const onCheckout = () => {
-    // if (!user) {
-    //   alert("Please sign up to place an order");
-    //   router.push("/account/signup");
-    // }
-    closeCart();
-
-    // router.push("/checkout");
   };
 
   const slideIn = {
@@ -70,65 +56,68 @@ export default function CartModal({ show, onClose }: any) {
   const drawerContent = show ? (
     // <div onClick={() => onClose()} className={overlay}>
     <Overlay onClick={onClose}>
-      <motion.div
-        variants={slideIn}
-        initial="hidden"
-        animate="visible"
-        exit="exit"
-        onClick={(e) => e.stopPropagation()}
-        className={container}
-      >
-        <div className={drawerstyle}>
-          <div className={drawerheader}>
-            <h2 className="text-xl uppercase font-bold tracking-widest">
-              Cart ({cart.length}){" "}
-            </h2>
+      <div className={container}>
+        <motion.div
+          variants={slideIn}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          onClick={(e) => e.stopPropagation()}
+          className={themodal}
+        >
+          <div className={drawerstyle}>
+            <div className={drawerheader}>
+              <h2 className="text-xl uppercase font-bold tracking-widest">
+                Cart ({cart.length}){" "}
+              </h2>
 
-            <div>
-              <button onClick={emptyCart} className="underline text-gray-500">
-                Remove all
-              </button>
+              <div>
+                <button onClick={emptyCart} className="underline text-gray-500">
+                  Remove all
+                </button>
+              </div>
             </div>
-          </div>
-          <div className={drawerbody}>
-            <div>
-              {cart.length === 0 ? (
-                <div className="space-y-4">
-                  <h2>Your cart is empty!</h2>
+            <div className={drawerbody}>
+              <div>
+                {cart.length === 0 ? (
+                  <div className="space-y-4">
+                    <h2>Your cart is empty!</h2>
 
-                  <button className="btn" onClick={onMenuChange}>
-                    add items
-                  </button>
-                </div>
-              ) : (
-                <div>
-                  <hr />
-                  <div className="h-full z-50">
-                    {cart.map(
-                      (cartItem: any, index: Key | null | undefined) => {
-                        return (
-                          <div key={index}>
-                            <CartItem item={cartItem} />
-                          </div>
-                        );
-                      }
-                    )}
+                    <button className="btn" onClick={onMenuChange}>
+                      add items
+                    </button>
                   </div>
-                </div>
-              )}
+                ) : (
+                  <div>
+                    <hr />
+                    <div className="h-full z-50">
+                      {cart.map(
+                        (cartItem: any, index: Key | null | undefined) => {
+                          return (
+                            <div key={index}>
+                              <CartItem item={cartItem} />
+                            </div>
+                          );
+                        }
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <div className={drawerfooter}>
+              <div className="flex justify-between my-4">
+                <h2 className="uppercase">total</h2>
+                <h2 className="font-semibold">{formatMoney(totalCartPrice)}</h2>
+              </div>
+              <a href="/checkout" className="btn w-full block mb-2">
+                checkout
+              </a>
             </div>
           </div>
-          <div className={drawerfooter}>
-            <button
-              onClick={onCheckout}
-              className={checkoutbtnDesk}
-              disabled={cart.length == 0}
-            >
-              <h3>Checkout</h3>
-            </button>
-          </div>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </Overlay>
   ) : null;
 

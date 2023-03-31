@@ -12,9 +12,16 @@ export default function SingleProduct({ product }: { product: Product }) {
   function addItemToCart(e: React.SyntheticEvent) {
     e.preventDefault();
     addToCart(
-      { id: product.id, name: product.name, price: product.price },
+      {
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        mobileimg: product.mobileimg,
+      },
       quantity
     );
+
+    setQuantity(1);
   }
 
   const icon = `h-4 w-4`;

@@ -11,6 +11,7 @@ export interface Product {
   desc: string;
   features: string;
   image?: string;
+  mobileimg?: string;
   gallery?: string[];
   category?: {
     id: string;
