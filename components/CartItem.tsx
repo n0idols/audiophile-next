@@ -33,7 +33,8 @@ export default function CartItem({ item, isCheckout }: Props) {
             <input
               className="text-center bg-gray-100 text-black"
               type="number"
-              placeholder={item.quantity}
+              value={item.quantity}
+              disabled
             />
             <button className="p-2" onClick={() => increaseItemQuantity(item)}>
               +
