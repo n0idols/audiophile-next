@@ -15,12 +15,12 @@ export default function FeaturedProducts() {
               />
             </div>
             <div className="lg:px-12 lg:text-left text-center">
-              <div className="flex flex-col mt-2 h-full lg:space-y-7 space-y-4">
+              <div className="flex flex-col mt-2 h-full lg:space-y-7 space-y-4 justify-center">
                 <h1 className="uppercase text-white">
                   ZX9 <br />
                   Speaker
                 </h1>
-                <p className="pb-4 text-gray-200">
+                <p className="pb-4 text-gray-200 lg:w-full md:w-1/2 w-full mx-auto">
                   Upgrade to premium speakers that are phenomenally built to
                   deliver truly remarkable sound.
                 </p>

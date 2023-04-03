@@ -3,23 +3,26 @@
 @tailwind utilities;
 
 h1 {
-  @apply lg:text-5xl text-4xl  tracking-wide font-semibold;
+  @apply lg:text-5xl text-4xl tracking-wide font-semibold;
 }
-form {
-  @apply flex flex-col  p-4;
-}
+
 label {
-  @apply mb-2 block text-xs font-medium text-gray-900;
+  @apply mb-2 block text-xs font-bold text-gray-900 capitalize;
 }
 
 select {
   @apply mb-2 rounded-md bg-gray-100 p-2;
 }
+legend {
+  @apply mb-4 uppercase text-primary font-semibold tracking-widest text-xs;
+}
 
+fieldset {
+  @apply mb-8;
+}
 .container {
   @apply max-w-6xl h-full mx-auto px-4 sm:px-6 lg:px-8;
 }
-
 .hero-content {
   @apply py-24 space-y-12;
 }
@@ -50,4 +53,16 @@ select {
 
 .qty-input {
   @apply w-[3rem] bg-gray-100 text-center font-bold text-gray-900 focus:border-blue-500 focus:ring-blue-500;
+}
+
+.form {
+  @apply mb-4 rounded-md border border-gray-300  px-4 py-4 text-xs;
+}
+
+.form-row {
+  @apply flex flex-col md:flex-row w-full  md:space-x-4;
+}
+
+.input-row {
+  @apply flex flex-col md:w-1/2 w-full;
 }

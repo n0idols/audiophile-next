@@ -6,6 +6,9 @@ import { useCart } from "@/lib/Cart";
 import { ShoppingCartIcon } from "@heroicons/react/24/solid";
 
 import CartModal from "./CartModal";
+import CategoryList from "./CategoryList";
+import Cats from "./Cats";
+import { Bars3Icon } from "@heroicons/react/20/solid";
 
 export const navLinks = [
   {
@@ -39,6 +42,14 @@ export default function Navbar() {
       <nav className={pathname === "/" ? `bg-transparent` : `bg-black `}>
         <div className="container py-6 text-white">
           <div className="flex justify-between">
+            {" "}
+            {/* mob button */}
+            <button
+              onClick={() => setMob(!isMob)}
+              className="flex items-center lg:hidden"
+            >
+              <Bars3Icon className="h-6 w-6" />
+            </button>
             {/* LOGO */}
             <div>
               <a href="/" className="text-2xl font-extrabold  ">
@@ -46,7 +57,7 @@ export default function Navbar() {
               </a>
             </div>
             {/* Primary Nav */}
-            <div className="hidden items-center justify-center space-x-8 text-sm font-light md:flex uppercase wide">
+            <div className="hidden items-center justify-center space-x-8 text-sm font-light lg:flex uppercase wide">
               {navLinks.map((link, idx) => (
                 <a
                   key={idx}
@@ -57,39 +68,19 @@ export default function Navbar() {
                 </a>
               ))}
             </div>
-
             {/* secondary nav */}
-            <div className=" hidden items-center space-x-4 text-sm font-light md:flex">
+            <div className="flex items-center space-x-4 text-sm font-light">
               <button onClick={toggleCart}>
                 <ShoppingCartIcon className="h-6 w-6" />
               </button>
-              {/* {cart ? cart.length : null} */}
+              <div>{cart ? cart.length : null}</div>
             </div>
-
-            {/* mob button */}
-            <button
-              onClick={() => setMob(!isMob)}
-              className="flex items-center md:hidden"
-            >
-              menu
-            </button>
           </div>
         </div>
         {/* mob nav */}
         {isMob ? (
           <div className="absolute flex h-1/2 w-full flex-col justify-center space-y-4 bg-green-200 px-8 text-6xl  md:hidden">
-            <a className="mob" href="/services">
-              Services
-            </a>
-            <a className="mob" href="/appointments">
-              Appointments
-            </a>
-            <a className="mob" href="/about">
-              How it Works
-            </a>
-            <a className="mob" href="/account">
-              Account
-            </a>
+            <Cats />
           </div>
         ) : (
           <></>

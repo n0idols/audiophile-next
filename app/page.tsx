@@ -6,15 +6,11 @@ import CategoryList from "@/components/CategoryList";
 import FeaturedProducts from "@/components/FeaturedProducts";
 
 export default async function page() {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_ROUTE}/api/categories`
-  );
-  const data = await res.json();
-  console.log(data);
   return (
     <>
       <Hero />
-      <CategoryList categories={data} />
+      {/* <Cats /> */}
+      <CategoryList />
       <FeaturedProducts />
       <Info />
     </>

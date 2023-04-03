@@ -1,11 +1,9 @@
-import Image from "next/image";
-import { Category } from "@/prisma/types";
-import { ChevronRightIcon } from "@heroicons/react/20/solid";
 import { categories } from "@/data/categories";
-
-export default function CategoryList() {
+import { ChevronRightIcon } from "@heroicons/react/24/solid";
+import Image from "next/image";
+export default function Cats() {
   return (
-    <div className="container mt-32">
+    <div className="container  mt-32 ">
       <div className="grid md:grid-cols-3 md:gap-8 ">
         {categories.map((category) => (
           <div key={category.id} className="-mt-32">

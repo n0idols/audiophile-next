@@ -27,10 +27,10 @@ export default function SingleProduct({ product }: { product: Product }) {
   const icon = `h-4 w-4`;
   return (
     <>
-      <form onSubmit={addItemToCart}>
-        <pre>{JSON.stringify(product, null, 2)}</pre>
+      <form className="flex flex-col" onSubmit={addItemToCart}>
+        {/* <pre>{JSON.stringify(product, null, 2)}</pre> */}
         <div>
-          <div className="grid grid-cols-2">
+          <div className="grid md:grid-cols-2">
             <div className="col-span-1">
               {product.image && (
                 <Image
@@ -41,10 +41,10 @@ export default function SingleProduct({ product }: { product: Product }) {
                 />
               )}
             </div>
-            <div className="col-span-1 ml-20">
-              <div className="flex flex-col justify-center h-full space-y-7">
+            <div className="col-span-1 md:ml-20">
+              <div className="flex flex-col justify-center h-full space-y-7 ">
                 {/* is new product? */}
-                <p className="uppercase text-primary wider">new product</p>
+                <p className="uppercase text-primary wider mt-4">new product</p>
                 <h2 className="text-4xl font-bold tracking-wide uppercase">
                   {product.name}
                 </h2>
@@ -91,7 +91,7 @@ export default function SingleProduct({ product }: { product: Product }) {
       </form>
 
       <div className="my-12">
-        <div className="grid grid-cols-2">
+        <div className="grid md:grid-cols-2">
           <div>
             <h2>Features</h2>
             <p>{product.features}</p>

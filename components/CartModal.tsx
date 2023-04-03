@@ -12,7 +12,7 @@ import Overlay from "./Overlay";
 
 const container = `max-w-6xl flex justify-end mx-auto px-4 w-full`;
 const themodal = `h-screen w-full sm:w-[600px] `;
-const drawerstyle = `h-auto flex flex-col  px-8 md:px-4 mt-28`;
+const drawerstyle = `h-auto flex flex-col mt-28`;
 const drawerheader = ` bg-white flex justify-between items-center p-8 rounded-t-xl`;
 const drawerbody = `bg-white h-full px-4 overflow-y-auto b`;
 const drawerfooter = `bg-white px-8 rounded-b-xl`;
@@ -34,7 +34,6 @@ export default function CartModal({ show, onClose }: any) {
 
   const slideIn = {
     hidden: {
-      y: "-20%",
       opacity: 0,
     },
     visible: {
@@ -48,7 +47,6 @@ export default function CartModal({ show, onClose }: any) {
       },
     },
     exit: {
-      y: "-20%",
       opacity: 0,
     },
   };
