@@ -7,6 +7,7 @@ export interface Category {
 export interface Product {
   id: string;
   name: string;
+  shortname: string;
   price: number;
   desc: string;
   features: string;

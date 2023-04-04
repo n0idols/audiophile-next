@@ -23,7 +23,8 @@ export default function CartItem({ item, isCheckout }: Props) {
             <p className="text-gray-600">{formatMoney(item.item.price)}</p>
           </div>
         </div>
-        <p>x{item.quantity}</p>
+
+        {isCheckout && <p>x{item.quantity}</p>}
 
         {!isCheckout && (
           <div className="w-60 m-4 bg-gray-100 grid grid-cols-3">

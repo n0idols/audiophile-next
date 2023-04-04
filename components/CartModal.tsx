@@ -11,7 +11,7 @@ import CartItem from "./CartItem";
 import Overlay from "./Overlay";
 
 const container = `max-w-6xl flex justify-end mx-auto px-4 w-full`;
-const themodal = `h-screen w-full sm:w-[600px] `;
+const themodal = `w-full sm:w-[600px] `;
 const drawerstyle = `h-auto flex flex-col mt-28`;
 const drawerheader = ` bg-white flex justify-between items-center p-8 rounded-t-xl`;
 const drawerbody = `bg-white h-full px-4 overflow-y-auto b`;
