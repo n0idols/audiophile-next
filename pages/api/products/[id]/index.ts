@@ -15,6 +15,8 @@ export default async function handler(
           category: true,
         },
       });
+      console.log(product);
+
       return res.status(200).json(product);
     } catch (error) {
       return res.status(500).json(error);
