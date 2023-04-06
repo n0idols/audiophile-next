@@ -1,6 +1,7 @@
 import { useCart } from "@/lib/Cart";
 import formatMoney from "@/lib/formatMoney";
 import { Product } from "@/prisma/types";
+import Image from "next/image";
 import React from "react";
 
 interface Props {
@@ -17,9 +18,18 @@ export default function CartItem({ item, isCheckout }: Props) {
     <div className="flex my-4">
       <div className="flex w-full ">
         <div className="flex items-center w-full space-x-4">
-          <div>IMAGE</div>
+          <div className="w-16 h-16">
+            <Image
+              src={item.item.mobileimg || "/images/placeholder.png"}
+              width="0"
+              height="0"
+              sizes="100vw"
+              className="w-full h-auto"
+              alt={item.item.name}
+            />
+          </div>
           <div className="text-sm font-semibold">
-            <h4 className="capitalize">{item.item.name}</h4>
+            <h4 className="capitalize">{item.item.shortname}</h4>
             <p className="text-gray-600">{formatMoney(item.item.price)}</p>
           </div>
         </div>

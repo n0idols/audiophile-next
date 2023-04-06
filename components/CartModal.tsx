@@ -11,7 +11,7 @@ import CartItem from "./CartItem";
 import Overlay from "./Overlay";
 
 const container = `max-w-6xl flex justify-end mx-auto px-4 w-full`;
-const themodal = `w-full sm:w-[600px] `;
+const themodal = `w-full md:w-1/2 lg:w-1/3`;
 const drawerstyle = `h-auto flex flex-col mt-28`;
 const drawerheader = ` bg-white flex justify-between items-center p-8 rounded-t-xl`;
 const drawerbody = `bg-white h-full px-4 overflow-y-auto b`;
@@ -87,7 +87,6 @@ export default function CartModal({ show, onClose }: any) {
                   </div>
                 ) : (
                   <div>
-                    <hr />
                     <div className="h-full z-50">
                       {cart.map(
                         (cartItem: any, index: Key | null | undefined) => {
@@ -106,10 +105,10 @@ export default function CartModal({ show, onClose }: any) {
 
             <div className={drawerfooter}>
               <div className="flex justify-between my-4">
-                <h2 className="uppercase">total</h2>
+                <h2 className="uppercase text-gray-500 ">total</h2>
                 <h2 className="font-semibold">{formatMoney(totalCartPrice)}</h2>
               </div>
-              <a href="/checkout" className="btn w-full block mb-2">
+              <a href="/checkout" className="btn w-full block mb-8 text-center">
                 checkout
               </a>
             </div>

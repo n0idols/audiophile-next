@@ -6,7 +6,7 @@ import { useCart } from "@/lib/Cart";
 import { ShoppingCartIcon } from "@heroicons/react/24/solid";
 
 import CartModal from "./CartModal";
-import CategoryList from "./CategoryList";
+
 import Cats from "./Cats";
 import { Bars3Icon } from "@heroicons/react/20/solid";
 
@@ -35,6 +35,10 @@ export default function Navbar() {
   const [isMob, setMob] = useState(false);
   const pathname = usePathname();
 
+  function toggleMenu() {
+    setMob(!isMob);
+  }
+
   return (
     <>
       <CartModal show={show} onClose={closeCart} />
@@ -45,7 +49,7 @@ export default function Navbar() {
             {" "}
             {/* mob button */}
             <button
-              onClick={() => setMob(!isMob)}
+              onClick={toggleMenu}
               className="flex items-center lg:hidden"
             >
               <Bars3Icon className="h-6 w-6" />
@@ -69,22 +73,23 @@ export default function Navbar() {
               ))}
             </div>
             {/* secondary nav */}
-            <div className="flex items-center space-x-4 text-sm font-light">
-              <button onClick={toggleCart}>
-                <ShoppingCartIcon className="h-6 w-6" />
+            <div className="grid place-items-center">
+              <button
+                onClick={toggleCart}
+                className="grid place-items-center relative"
+              >
+                <ShoppingCartIcon className="h-5 w-5" />
+                {cart?.length > 0 ? (
+                  <span className="badge">{cart.length}</span>
+                ) : (
+                  <></>
+                )}
               </button>
-              <div>{cart ? cart.length : null}</div>
             </div>
           </div>
         </div>
         {/* mob nav */}
-        {isMob ? (
-          <div className="absolute flex h-1/2 w-full flex-col justify-center space-y-4 bg-green-200 px-8 text-6xl  md:hidden">
-            <Cats />
-          </div>
-        ) : (
-          <></>
-        )}
+        {isMob ? <Cats /> : <></>}
       </nav>
     </>
   );

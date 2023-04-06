@@ -66,3 +66,11 @@ fieldset {
 .input-row {
   @apply flex flex-col md:w-1/2 w-full;
 }
+
+.product-info {
+  @apply flex flex-col justify-center px-6 space-y-6 lg:text-start text-center mt-4;
+}
+
+.badge {
+  @apply bg-red-500 absolute bottom-1 left-2 z-10 rounded-full px-4 py-2;
+}

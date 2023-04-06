@@ -12,7 +12,7 @@ export default async function handler(
           id: req?.query?.id?.toString(),
         },
         include: {
-          Products: true,
+          Products: { orderBy: { id: "asc" } },
         },
       });
       return res.status(200).json(data);
