@@ -38,9 +38,9 @@ export default function SingleProduct({ product }: { product: Product }) {
         <div>
           <div className="grid md:grid-cols-2">
             <div className="col-span-1">
-              {no ? (
+              {product.image ? (
                 <Image
-                  src={product?.image || "https://via.placeholder.com/360x360"}
+                  src={product.image || "https://via.placeholder.com/360x360"}
                   alt={product.name}
                   width="0"
                   height="0"

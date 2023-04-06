@@ -3,6 +3,8 @@ import formatMoney from "@/lib/formatMoney";
 import { Product } from "@/prisma/types";
 import Image from "next/image";
 import React from "react";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 interface Props {
   item: {
@@ -19,14 +21,18 @@ export default function CartItem({ item, isCheckout }: Props) {
       <div className="flex w-full ">
         <div className="flex items-center w-full space-x-4">
           <div className="w-16 h-16">
-            <Image
-              src={item.item.mobileimg || "/images/placeholder.png"}
-              width="0"
-              height="0"
-              sizes="100vw"
-              className="w-full h-auto"
-              alt={item.item.name}
-            />
+            {item.item.mobileimg ? (
+              <Image
+                src={item.item.mobileimg || "/images/placeholder.png"}
+                width="0"
+                height="0"
+                sizes="100vw"
+                className="w-full h-auto"
+                alt={item.item.name}
+              />
+            ) : (
+              <Skeleton height={100} />
+            )}
           </div>
           <div className="text-sm font-semibold">
             <h4 className="capitalize">{item.item.shortname}</h4>
