@@ -5,6 +5,8 @@ import { PlusIcon, MinusIcon } from "@heroicons/react/20/solid";
 import Image from "next/image";
 import { Product } from "@/prisma/types";
 import { toast } from "react-hot-toast";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 export default function SingleProduct({ product }: { product: Product }) {
   const { addToCart } = useCart();
@@ -28,21 +30,25 @@ export default function SingleProduct({ product }: { product: Product }) {
   }
 
   const icon = `h-4 w-4`;
+  const no = false;
+
   return (
     <div className="my-8">
       <form className="flex flex-col" onSubmit={addItemToCart}>
         <div>
           <div className="grid md:grid-cols-2">
             <div className="col-span-1">
-              {product.image && (
+              {no ? (
                 <Image
-                  src={product?.image || "/images/placeholder.png"}
+                  src={product?.image || "https://via.placeholder.com/360x360"}
                   alt={product.name}
                   width="0"
                   height="0"
                   sizes="100vw"
                   className="w-full h-auto"
                 />
+              ) : (
+                <Skeleton height={400} />
               )}
             </div>
             <div className="col-span-1 md:ml-20">
