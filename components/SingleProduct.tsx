@@ -39,7 +39,7 @@ export default function SingleProduct({ product }: { product: Product }) {
             <div className="col-span-1">
               {product.image ? (
                 <Image
-                  src={product.image}
+                  src={product.image || "/images/placeholder.jpg"}
                   alt={product.name}
                   width="0"
                   height="0"
