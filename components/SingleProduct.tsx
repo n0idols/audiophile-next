@@ -31,7 +31,6 @@ export default function SingleProduct({ product }: { product: Product }) {
   return (
     <div className="my-8">
       <form className="flex flex-col" onSubmit={addItemToCart}>
-        {/* <pre>{JSON.stringify(product, null, 2)}</pre> */}
         <div>
           <div className="grid md:grid-cols-2">
             <div className="col-span-1">
