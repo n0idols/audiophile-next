@@ -37,18 +37,14 @@ export default function SingleProduct({ product }: { product: Product }) {
         <div>
           <div className="grid md:grid-cols-2">
             <div className="col-span-1">
-              {product.image ? (
-                <Image
-                  src={product.image || "/images/placeholder.jpg"}
-                  alt={product.name}
-                  width="0"
-                  height="0"
-                  sizes="100vw"
-                  className="w-full h-auto"
-                />
-              ) : (
-                <Skeleton height={400} />
-              )}
+              <Image
+                src={product.image || "/images/placeholder.jpg"}
+                alt={product.name}
+                width="0"
+                height="0"
+                sizes="100vw"
+                className="w-full h-auto"
+              />
             </div>
             <div className="col-span-1 md:ml-20">
               <div className="flex flex-col justify-center h-full space-y-7 ">

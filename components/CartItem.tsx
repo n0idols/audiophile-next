@@ -22,7 +22,7 @@ export default function CartItem({ item, isCheckout }: Props) {
         <div className="flex items-center w-full space-x-4">
           <div className="w-16 h-16">
             <Image
-              src={item.item.mobileimg || "/images/64x64.jpg"}
+              src={item.item.mobileimg || "/images/placeholdermob.jpg"}
               width="0"
               height="0"
               sizes="100vw"
