@@ -36,9 +36,10 @@ export default function SingleProduct({ product }: { product: Product }) {
       <form className="flex flex-col" onSubmit={addItemToCart}>
         <div>
           <div className="grid md:grid-cols-2">
+            <pre>{JSON.stringify(product, null, 2)}</pre>
             <div className="col-span-1">
               <Image
-                src={product.image || "/images/placeholder.jpg"}
+                src={product.image || "/placeholder.jpg"}
                 alt={product.name}
                 width="0"
                 height="0"
