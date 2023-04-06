@@ -11,7 +11,15 @@ export default function ProductItem({ product }: { product: Product }) {
   return (
     <div className="grid lg:grid-cols-2 my-32" key={product.id}>
       <div className={isEven(product.id) ? `lg:order-last` : ``}>
-        {product.image ? (
+        <Image
+          src={product.image || "https://via.placeholder.com/360x360"}
+          alt={product.name}
+          width="0"
+          height="0"
+          sizes="100vw"
+          className="w-full h-auto"
+        />
+        {/* {product.image ? (
           <Image
             src={product.image}
             alt={product.name}
@@ -22,7 +30,7 @@ export default function ProductItem({ product }: { product: Product }) {
           />
         ) : (
           <Skeleton height={400} />
-        )}
+        )} */}
       </div>
 
       <div
