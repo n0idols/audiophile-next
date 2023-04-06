@@ -30,7 +30,6 @@ export default function SingleProduct({ product }: { product: Product }) {
   }
 
   const icon = `h-4 w-4`;
-  const no = false;
 
   return (
     <div className="my-8">
@@ -40,7 +39,7 @@ export default function SingleProduct({ product }: { product: Product }) {
             <div className="col-span-1">
               {product.image ? (
                 <Image
-                  src={product.image || "https://via.placeholder.com/360x360"}
+                  src={product.image}
                   alt={product.name}
                   width="0"
                   height="0"

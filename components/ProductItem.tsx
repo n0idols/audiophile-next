@@ -13,7 +13,7 @@ export default function ProductItem({ product }: { product: Product }) {
       <div className={isEven(product.id) ? `lg:order-last` : ``}>
         {product.image ? (
           <Image
-            src={product.image || "https://via.placeholder.com/360x360"}
+            src={product.image}
             alt={product.name}
             width="0"
             height="0"

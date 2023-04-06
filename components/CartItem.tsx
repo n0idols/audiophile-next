@@ -23,7 +23,9 @@ export default function CartItem({ item, isCheckout }: Props) {
           <div className="w-16 h-16">
             {item.item.mobileimg ? (
               <Image
-                src={item.item.mobileimg || "/images/placeholder.png"}
+                src={
+                  item.item.mobileimg || "https://via.placeholder.com/360x360"
+                }
                 width="0"
                 height="0"
                 sizes="100vw"
