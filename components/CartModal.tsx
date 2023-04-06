@@ -9,6 +9,7 @@ import formatMoney from "@/lib/formatMoney";
 import ReactDOM from "react-dom";
 import CartItem from "./CartItem";
 import Overlay from "./Overlay";
+import { reveal } from "@/lib/animations";
 
 const container = `max-w-6xl flex justify-end mx-auto px-4 w-full`;
 const themodal = `w-full md:w-1/2 lg:w-1/3`;
@@ -16,8 +17,6 @@ const drawerstyle = `h-auto flex flex-col mt-28`;
 const drawerheader = ` bg-white flex justify-between items-center p-8 rounded-t-xl`;
 const drawerbody = `bg-white h-full px-4 overflow-y-auto b`;
 const drawerfooter = `bg-white px-8 rounded-b-xl`;
-const checkoutbtnDesk = `hidden md:flex btn btn-primary  my-4 w-full py-2 justify-center justify-center text-center`;
-const checkoutbtn = `md:hidden btn btn-primary my-4 py-2 px-20 flex justify-center `;
 
 export default function CartModal({ show, onClose }: any) {
   const [isBrowser, setIsBrowser] = useState(false);
@@ -27,36 +26,11 @@ export default function CartModal({ show, onClose }: any) {
     setIsBrowser(true);
   }, []);
 
-  const onMenuChange = () => {
-    closeCart();
-    // router.push("/menu");
-  };
-
-  const slideIn = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      y: "0",
-      opacity: 1,
-      transition: {
-        duration: 0.1,
-        type: "spring",
-        damping: 25,
-        stiffness: 500,
-      },
-    },
-    exit: {
-      opacity: 0,
-    },
-  };
-
-  const drawerContent = show ? (
-    // <div onClick={() => onClose()} className={overlay}>
+  const cartContent = show ? (
     <Overlay onClick={onClose}>
       <div className={container}>
         <motion.div
-          variants={slideIn}
+          variants={reveal}
           initial="hidden"
           animate="visible"
           exit="exit"
@@ -80,10 +54,6 @@ export default function CartModal({ show, onClose }: any) {
                 {cart.length === 0 ? (
                   <div className="space-y-4">
                     <h2>Your cart is empty!</h2>
-
-                    <button className="btn" onClick={onMenuChange}>
-                      add items
-                    </button>
                   </div>
                 ) : (
                   <div>
@@ -121,7 +91,7 @@ export default function CartModal({ show, onClose }: any) {
   if (isBrowser) {
     return ReactDOM.createPortal(
       <AnimatePresence mode="wait" initial={false} onExitComplete={() => null}>
-        {drawerContent}
+        {cartContent}
       </AnimatePresence>,
       //@ts-ignore
       document.getElementById("drawer-root")

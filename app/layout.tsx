@@ -19,6 +19,7 @@ export default function RootLayout({
     <html lang="en" className={`${man.variable}`}>
       <body>
         <div id="drawer-root"></div>
+        <div id="mob-nav"></div>
 
         <Providers>
           <Navbar />

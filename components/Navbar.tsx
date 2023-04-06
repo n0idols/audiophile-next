@@ -7,8 +7,10 @@ import { ShoppingCartIcon } from "@heroicons/react/24/solid";
 
 import CartModal from "./CartModal";
 
-import Cats from "./Cats";
 import { Bars3Icon } from "@heroicons/react/20/solid";
+import Logo from "./Logo";
+import CartIcon from "./CartIcon";
+import MobNav from "./MobNav";
 
 export const navLinks = [
   {
@@ -39,10 +41,14 @@ export default function Navbar() {
     setMob(!isMob);
   }
 
+  function toggleMob() {
+    setMob(!isMob);
+  }
+
   return (
     <>
       <CartModal show={show} onClose={closeCart} />
-
+      <MobNav show={isMob} onClose={toggleMob} />
       <nav className={pathname === "/" ? `bg-transparent` : `bg-black `}>
         <div className="container py-6 text-white">
           <div className="flex justify-between">
@@ -57,7 +63,7 @@ export default function Navbar() {
             {/* LOGO */}
             <div>
               <a href="/" className="text-2xl font-extrabold  ">
-                audiophile
+                <Logo />
               </a>
             </div>
             {/* Primary Nav */}
@@ -78,7 +84,7 @@ export default function Navbar() {
                 onClick={toggleCart}
                 className="grid place-items-center relative"
               >
-                <ShoppingCartIcon className="h-5 w-5" />
+                <CartIcon />
                 {cart?.length > 0 ? (
                   <span className="badge">{cart.length}</span>
                 ) : (
@@ -88,8 +94,6 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-        {/* mob nav */}
-        {isMob ? <Cats /> : <></>}
       </nav>
     </>
   );

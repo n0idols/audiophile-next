@@ -9,7 +9,6 @@ export default async function page() {
   return (
     <>
       <Hero />
-      {/* <Cats /> */}
       <CategoryList />
       <FeaturedProducts />
       <Info />
