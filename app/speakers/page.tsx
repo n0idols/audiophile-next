@@ -12,8 +12,8 @@ export default async function page() {
     <>
       <PageHero title={data[0].name} />
       <section className="container">
-        {products.map((product: Product, index: any) => (
-          <ProductItem key={index} product={product} index={index} />
+        {products.map((product: Product) => (
+          <ProductItem key={product.id} product={product} />
         ))}
       </section>
     </>
